@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-nfs
+  labels:
+    name: pv-nfs
+spec:
+  capacity:
+    storage: 2Gi
+  accessModes:
+    - ReadWriteOnce 
+  storageClassName: mynfs
+  nfs:
+    path: /opt/nfs_root
+    server: 192.168.4.128
